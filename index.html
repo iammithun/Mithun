@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Buttons with Rainbow Waves</title>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <img src="https://example.com/path/to/image.png" alt="Map of Elis">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(270deg, #ff3d00, #ffea00, #00e676, #00b0ff, #d500f9);
+            background-size: 1500% 1500%;
+            animation: rainbowWaves 12s ease infinite;
+            color: white;
+            font-family: 'Karla', sans-serif;
+            text-align: center;
+        }
+
+        @keyframes rainbowWaves {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-family: 'Karla', sans-serif;
+            cursor: pointer;
+            background: black; /* Background color */
+            color: white; /* Text color */
+            border: 2px solid transparent; /* Border color */
+            border-radius: 5px;
+            transition: border-color 0.3s, background 0.3s;
+            font-size: 1.2rem;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Glowing effect */
+        }
+
+        .button:hover {
+            border-color: #ff3d00; /* Border color on hover */
+            background: linear-gradient(90deg, #ff3d00, #ffea00, #00e676, #00b0ff, #d500f9); /* Background gradient on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="button" onclick="openLocationTab()">Location</button>
+        <button class="button" onclick="openHelloTab()">Government</button>
+        <button class="button" onclick="openHelloTab()">Economy</button>
+        <button class="button" onclick="openHelloTab()">Education</button>
+        <button class="button" onclick="openHelloTab()">Lifestyle</button>
+        <button class="button" onclick="openHelloTab()">Social Structure</button>
+        <button class="button" onclick="openHelloTab()">Roles of Men & Women</button>
+        <button class="button" onclick="openHelloTab()">Fun Facts</button>
+    </div>
+
+    <script>
+        // Function to open the Location tab with the image and paragraph
+        function openLocationTab() {
+            const newWindow = window.open();
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Location - Elis</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh;
+                            background: linear-gradient(270deg, #ff3d00, #ffea00, #00e676, #00b0ff, #d500f9);
+                            background-size: 1500% 1500%;
+                            animation: rainbowWaves 12s ease infinite;
+                            color: white;
+                            font-family: 'Karla', sans-serif;
+                            text-align: center;
+                        }
+                        @keyframes rainbowWaves {
+                            0% { background-position: 0% 50%; }
+                            50% { background-position: 100% 50%; }
+                            100% { background-position: 0% 50%; }
+                        }
+                        img {
+                            max-width: 80%; /* Make the image responsive */
+                            height: auto;
+                            margin-top: 20px;
+                        }
+                        p {
+                            max-width: 600px; /* Limit paragraph width */
+                            margin: 20px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h1>Elis</h1>
+                    <p>
+                        Elis was located in the western part of the Peloponnese peninsula in ancient Greece, with the Ionian Sea to the west and the Arcadian mountains to the east. The region had fertile plains, especially around the Alpheus River, which helped with farming. Olympia, a city in Elis, was well-known for hosting the ancient Olympic Games, attracting visitors from all over Greece. The landscape had low hills and plains, making Elis an important place for agriculture, culture, and religion in ancient Greece.
+                    </p>
+                    <img src="https://example.com/path/to/image.png">
+
+                </body>
+                </html>
+            `);
+            newWindow.document.close(); // Close the document to finish loading
+        }
+
+        // Function to open a new tab with 'Hello'
+        function openHelloTab() {
+            const newWindow = window.open();
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Hello</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            padding: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh;
+                            background: linear-gradient(270deg, #ff3d00, #ffea00, #00e676, #00b0ff, #d500f9);
+                            background-size: 1500% 1500%;
+                            animation: rainbowWaves 12s ease infinite;
+                        }
+                        @keyframes rainbowWaves {
+                            0% { background-position: 0% 50%; }
+                            50% { background-position: 100% 50%; }
+                            100% { background-position: 0% 50%; }
+                        }
+                        h1 {
+                            font-family: 'Karla', sans-serif;
+                            color: white;
+                            font-size: 4rem;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h1>Hello</h1>
+                </body>
+                </html>
+            `);
+            newWindow.document.close(); // Close the document to finish loading
+        }
+    </script>
+</body>
+</html>
+
+
+
